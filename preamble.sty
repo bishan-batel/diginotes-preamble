@@ -20,8 +20,7 @@
 \newcommand{\L}[0]{{\mathbb L}} 
 \newcommand{\M}[0]{{\mathbb M}} 
 \newcommand{\N}[0]{{\mathbb N}} 
-\newcommand{\O}[0]{{\mathbb O}} 
-\newcommand{\P}[0]{{\mathbb P}} 
+\newcommand{\O}[0]{{\mathbb O}} \newcommand{\P}[0]{{\mathbb P}} 
 \newcommand{\Q}[0]{{\mathbb Q}}
 \newcommand{\R}[0]{{\mathbb R}}
 \newcommand{\Rn}[1]{ {{\mathbb R}^{#1}} }
@@ -52,6 +51,14 @@
 \newcommand{\emats}[1]{{ \begin{smallmatrix} #1 \end{smallmatrix} }}
 
 \newcommand{\vmat}[1]{{ \begin{vmatrix} #1 \end{vmatrix} }}
+
+\newcommand{\rowechelon}[1]{{ 
+		\left[\begin{array}{ccc|c} #1 \end{array}\right]
+}}
+
+\newcommand{\augmented}[2]{{ 
+		\left[\begin{array}{#1} #2 \end{array}\right]
+}}
 
 % Generic Notatino
 \newcommand{\paren}[1]{{ \left(#1\right) }}
@@ -88,5 +95,8 @@
 
 \newcommand{\true}[0]{{ \mathrm{true} }} 
 \newcommand{\false}[0]{{ \mathrm{false} }} 
+
+\newcommand{\ba}[1]{{ \left[ {#1} \right] }} 
+
 
 
