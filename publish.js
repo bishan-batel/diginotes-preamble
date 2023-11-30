@@ -1,16 +1,22 @@
 (async function loadPreamble() {
   if (window.MathJax && window.MathJax.tex2chtml) {
-    const preambleURL =
-      "https://raw.githubusercontent.com/bishan-batel/diginotes-preamble/main/preamble.sty";
+    const og = document.querySelector(
+      "a.tree-item-self.is-clickable.mod-active"
+    );
 
-    console.log("Loading preamble");
-    MathJax.texReset();
-    MathJax.typesetClear();
-    MathJax.tex2chtml(await (await fetch(preambleURL)).text());
-    MathJax.typesetPromise();
-    console.log("Preamble Loaded!");
+    const preamble = await fetch(
+      "https://raw.githubusercontent.com/bishan-batel/diginotes-preamble/main/preamble.sty"
+    );
+    MathJax.tex2chtml(await preamble.text());
+
+    document.querySelectorAll("a.tree-item-self.is-clickable").forEach((e) => {
+      if (e.attributes["data-path"].textContent != "Home.md") return;
+
+      e.click();
+      setTimeout(() => og.click(), 1);
+    });
 
     return;
   }
-  setTimeout(loadPreamble, 5);
+  setTimeout(loadPreamble, 1);
 })();
